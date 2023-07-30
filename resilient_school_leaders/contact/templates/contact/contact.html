@@ -1,0 +1,57 @@
+{% extends 'contact/base.html' %}
+{% load static %}
+
+<!-- HEAD CONTENT -->
+{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Resilient School Leaders{% endblock %}</title>
+    <!-- LANDING PAGE STYLING SHEET -->
+    <link rel="stylesheet" href="{% static 'css/landing_styles2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+
+    <!-- Your head content -->
+    <style>
+        /* Center the form within its own div */
+        .centered-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Add some padding and border to the form */
+        form {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+{% endblock %}
+
+
+<!-- BODY CONTENT -->
+{% block content %}
+    <h1>Contact Us</h1>
+    <div class="centered-form">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}

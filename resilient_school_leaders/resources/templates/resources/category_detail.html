@@ -1,0 +1,22 @@
+{% extends 'resources/base.html' %}
+
+{% block content %}
+    <section class="category">
+        <div class="category-header">
+            <h1>{{ category.category_name }}</h1>
+            <img src="{{ category.category_image.url }}" alt="{{ category.category_name }}">
+        </div>
+        <div class="category-resources">
+            {% for resource in resources %}
+                <div class="resource">
+                    <img src="{{ resource.image.url }}" alt="{{ resource.title }}">
+                    <h2>{{ resource.title }}</h2>
+                    <p>{{ resource.description }}</p>
+                    <a href="{{ resource.url }}">Read more</a>
+                </div>
+            {% empty %}
+                <p>No resources found.</p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

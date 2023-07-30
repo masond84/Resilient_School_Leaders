@@ -1,0 +1,166 @@
+{% extends 'main/base.html' %}
+{% load static %}
+<!-- HEAD CONTENT -->
+{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}About Page{% endblock %}</title>
+	<!-- CSS STYLING SHEET -->
+	<link rel="stylesheet" href="{% static "css/about_styles.css" %}">
+{% endblock %}
+<!-- BODY CONTENT -->
+{% block content %}
+	<!-- Hero Section -->
+	<section class="hero-section" style="background-image: url({% static 'media/About-Us.png' %});">
+		<div class="container" style="position:absolute; left:150px; top:200px; width:50%;">
+			<div class="row">
+				<div class="col-md-6">
+					<h1 class="text-uppercase text-left" style="color:white;font-family:'Montserrat';margin: 5px;">Learn</h1>
+					<h1 class="text-uppercase font-weight-light text-left" style="color:#18a0fb;font-family:'Montserrat';font-weight:400;font-size:45px;">About Us</h1>
+					<hr style="color:white;width:80%; height:2px;">
+					<p style="white">And our dedication to empowering students and individuals like you with the knowledge and tools you need to excel in both academic and professional environments.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--===== Email Signup =====-->
+    <section class="email-signup">
+        <h2 class="signup-heading">View Our Open-Source Resource Hub</h2>
+        <a href="{% url 'resource_index' %}" class="signup-button">
+            <p>View All</p>
+        </a>
+        <a href="{% url 'contact_index' %}" class="contact-button">
+            <p>Learn More</p>
+        </a>
+    </section>
+	<!-- ABOUT SECTION -->
+	<section id="about" class="section">
+		<div class="container">
+			<h2 class="section-header text-center" style="margin-top:2rem;">About Resilient School Leaders</h2>
+			<p>Resilient School Leaders (RSL) is an open-source web application designed to provide school leaders with a modern, easy-to-navigate resource hub. Our platform serves as a centralized platform for accessing a wide range of resources across various categories.</p>
+			<p>With RSL, school leaders can find support and guidance in areas such as professional and leadership development, well-being and resilience, diversity equity and inclusion, team building, and community networking.</p>
+			<p>We understand the challenges that school leaders face in their roles, and our goal is to empower them by providing the necessary tools and information to excel in their professional and academic endeavors.</p>
+		</div>
+	</section>
+	<!-- ABOUT SERVICES SECTION -->
+	<section class="services-section">
+		<div class="container">
+			<h2 class="section-header text-center" style="margin-top:2rem;">What We Offer</h2>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card" style="border: none;">
+						<div class="image-container">
+						<img src="{% static "media/Service-Vector-1.png" %}" class="card-img-top" alt="..." style="border-radius: 6rem 0 0 0;">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Personal Development</h5>
+							<p class="card-text">Equip yourself with the latest knowledge and skills. 
+								Enhance your leadership capabilities, stay up-to-date with trends, and unlock new opportunities for personal and professional growth.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="border: none;">
+						<div class="image-container">
+							<img src="{% static "media/Service-Vector-2.png" %}" class="card-img-top" alt="..." style="border-radius: 6rem 0 0 0;">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Resource Repository</h5>
+							<p class="card-text">
+								Gain access to an extensive repository of documents, articles, and resources specifically curated for school leaders.
+								Our resource hub serves as a centralized platform, offering a wide range of materials encompassing professional development, 
+								leadership strategies, educational best practices, and more.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="border: none;">
+						<div class="image-container">
+							<img src="{% static "media/Service-Vector-3.png" %}" class="card-img-top" alt="..." style="border-radius: 6rem 0 0 0;">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Resource Curation and Recommendations</h5>
+							<p class="card-text" style="line-height:1.5rem">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Sed euismod, sapien vel bibendum bibendum, velit sapien bibendum sapien, 
+								vel bibendum sapien sapien vel bibendum.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</section>
+
+	<section id="mission-vision" class="section">
+		<div class="container">
+		  <div class="row align-items-center">
+			<div class="col-md-6">
+			  <img src="{% static "media/GetInvolved.jpg" %}" alt="Mission and Vision Image" style="width:100%;border-radius:4rem;border-bottom: solid black 1px;">
+			</div>
+			<div class="col-md-6 mx-auto">
+			  <h2 class="text-center">Mission and Vision</h2>
+			  <br>
+			  <p>Resilient School Leaders hopes to equip individuals with the knowledge,
+				resources, and support they need to thrive in any professional or academic role. 
+				Our Accessible resource hub aims to foster professional development, promote resilience,
+				and encourage inclusive practices. We hope to ultimately inspire each individual to lead their communities
+				with excellence.
+			  </p>
+			</div>
+		  </div>
+		</div>
+	</section>
+	  
+	  
+	<section id="about-team" class="section">
+		<div class="container">
+			<h2 class="text-center">About the Team</h2>
+			<div class="row justify-content-center">
+				<div class="col-md-4 mb-4">
+					<div class="card" style="border: none;">
+						<div class="image-container">
+						<img src="{% static "media/Wilson_A2.jpg" %}" class="card-img-top" alt="...">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title text-center">Adrianne Wilson</h5>
+							<p class="card-text text-center">School Administrator</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="card" style="border: none;">
+						<div class="image-container">
+							<img src="{% static "media/logo_2.png" %}" class="card-img-top" alt="...">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title text-center">Devin Mason</h5>
+							<p class="card-text text-center">Lead Developer<p>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</section>
+	
+	<!--
+	<section id="testimonials" class="section">
+		<div class="container">
+			<h2>Testimonials</h2>
+			<div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+				<blockquote class="blockquote">
+					<p class="mb-0">Testimonial 1</p>
+					<footer class="blockquote-footer">Name 1</footer>
+				</blockquote>
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+	-->
+	  
+{% endblock %}

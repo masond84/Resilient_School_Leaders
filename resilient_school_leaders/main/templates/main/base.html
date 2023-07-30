@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- NAVIGATION STYLING SHEET -->
+    {% endblock %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="display:flexbox;justify-content:space-between;align-items:center;position:fixed;top:0;left:0;width:100%;height:80px;z-index: 100;background-color: rgba(0, 0, 0, 0.7);">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}" width="90" height="90"><img src="{%static 'media/logo_2.png' %}" width='115' height='115'>
+            <!--<span>School Leaders</span>--></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav" style="display: flex;justify-content: flex-end;align-items: center;margin-right: 50px;position: relative;">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'resource_index' %}">
+                      Resources ↗
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about_index' %}">
+                      About Us ↗
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.adriannewilson.com/">Blog ↗</a>
+                </li>
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        More ↗
+                        </a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'contact_index' %}">Contact Us</a></li>
+                    <li><a class="dropdown-item" href="{% url 'faqs_index' %}">FAQs</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Website Footer Menu -->
+    <footer class="text-center text-lg-start"  style="background-color:#262626;">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <h5 class="text-uppercase mb-4" style="color:white;">Who Are We</h5>
+    
+              <ul class="list-unstyled mb-4">
+                <li>
+                  <a href="{% url 'about_index' %}" class="text-white" style="text-decoration:none;">About Us</a>
+                </li>
+                <li>
+                  <a href="{% url 'contact_index' %}" class="text-white" style="text-decoration:none;">Contact Us</a>
+                </li>
+                <li>
+                  <a href="{% url 'faqs_index' %}" class="text-white" style="text-decoration:none;">FAQ's</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+    
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <h5 class="text-uppercase mb-4" style="color:white;">How We Can Help</h5>
+    
+              <ul class="list-unstyled">
+                <li>
+                  <a href="https://www.adriannewilson.com/" class="text-white" style="text-decoration:none;">Our Blog</a>
+                </li>
+                <li>
+                  <a href="{% url 'resource_index' %}" class="text-white" style="text-decoration:none;">Our Resources</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white" style="text-decoration:none;">Our Categories</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white" style="text-decoration:none;">Our Purpose</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+    
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <h5 class="text-uppercase mb-4" style="color:white;">Sign up to our newsletter</h5>
+    
+              <form method="post" action="{% url 'newsletter_signup' %}">
+                {% csrf_token %}
+                <div class="form-outline form-white mb-4">
+                    <input type="email" name="email" class="form-control" />
+                    <label class="form-label" for="form5Example2">Email address</label>
+                    <button type="submit" style="font-family: Montserrat; background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;margin-top:10px;">Subscribe</button>
+                </div>
+              </form>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+    
+        <!-- Copyright -->
+        <div class="text-left p-3 border-top border-white">
+          © 2020 Copyright:
+          <a class="text-white" href="https://resilientschoolleaders.com">ResilientSchoolLeaders.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+</html>

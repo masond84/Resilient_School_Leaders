@@ -1,0 +1,20 @@
+{% extends 'contact/base.html' %}
+{% load static %}
+
+<!-- HEAD CONTENT -->
+{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Resilient School Leaders{% endblock %}</title>
+    <!-- LANDING PAGE STYLING SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+
+<!-- BODY CONTENT -->
+{% block content %}
+
+    <h1>Thank you for your inquiry</h1>
+    <p>Your contact information and message was successfully submitted.</p>
+
+{% endblock%}

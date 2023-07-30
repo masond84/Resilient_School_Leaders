@@ -1,0 +1,123 @@
+{% extends 'resources/base.html' %}
+{% load static %}
+<!-- HEAD CONTENT -->
+{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Resource Page{% endblock %}</title>
+  <!-- CSS STYLING -->
+  <link rel="stylesheet" href="{% static 'css/resources_styles.css' %}">
+{% endblock %}
+<!-- BODY CONTENT -->
+{% block content %}
+  <!-- HERO SECTION  -->
+  <section class="hero" style="background-image: url({% static 'media/Resource-Hero-3.png'%}); background-size:cover; background-repeat:no-repeat; height:705px;">
+    <div class="form">
+      <!-- Hero Content -->
+      <p>Expand Your Knowledge and Skills With Our Diverse Range of Resources</p>
+      <h4>Accomplish & Learn More</h4>
+    </div>
+  </section>
+  <!-- SUBHERO -->
+  <!--
+  <section class="header-info" id="header-info">
+    <img src="{% static 'media/resource-4.png' %}" alt="text-here" style="width:100%;">
+  </section>
+  -->
+
+  <!-- Category section -->
+  <section class="category" id="category" style="background-color:#f8f9fa;padding:20px 0;">
+    <h2 class="category-title" style="text-align:center;margin-bottom:40px;">Categories</h2>
+    <div class="container">
+      <div class="row">
+        <ul class="list-group" style="display:flex;flex-direction:row;flex-wrap:wrap;gap:10px;align-items:stretch;">
+          {% for item in category %}
+          <a href="{% url 'category_detail' category_id=item.id %}" style="text-decoration:none;">
+            <li class="list-group-item" style="border:none;font-size:18px;width:200px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2 style="font-size:14px;margin:0;">{{ item.category_name }}</h2>
+                <span class="badge bg-primary rounded-pill" style="font-size:14px;padding:8px 12px;margin-left:10px;">{{ item.resource_count }}</span>
+              </div>
+            </li>
+          </a>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured resources section -->
+  <section class="featured-resources" id="featured-resources">
+    <div class="container-lg" style="padding-top:20px;padding-bottom:-20px;">
+      <div class="text-center">
+        <h2>Featured Resources</h2>
+        <p class="lead text-muted">Our most popular resources choosen by our community</p>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row" style="padding-left: 100px;">
+        {% for item in resource|slice:9 %}
+          <div class="col-md-4 mb-3">
+            <div class="card" style="width: 18rem;height:500x;margin-bottom:15px;">
+              <div class="card-body text-center" style="overflow:hidden;height:auto;"> 
+                <h5 class="card-title" style="font-size:20px;height:100px;overflow:hidden;text-overflow:elipsis;">{{ item.title }}</h5>
+                <p class="card-text" style="margin-bottom: 10px;"><small class="text-muted"><i class="fas fa-calendar-alt"></i>{{ item.date_published|date:"F d, Y" }}<i class="fas fa-eye"></i>1000</small></p>
+                <p class="card-text" style="height:150px;overflow:hidden;">{{ item.description|slice:":300" }}</p>
+                <p class="card-text"><small class="text-muted">{{ item.category.category_name }}</small></p>
+                <a href="{{ item.url }}" class="card-link" style="display:inline-block;padding:10px 20px;background-color:blue;color:#fff;border-radius:50px;text-decoration:none;font-size:16px;font-weight:bold;text-align:center;margin-top:0.5rem;">View</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="view-all" >
+        <a href="{% url 'all_resources' %}" class="btn">View All Resources</a>
+      </div>
+    </div> 
+  </section>
+
+  <!-- ABOUT SERVICES SECTION -->
+	<section class="services-section">
+		<div class="container">
+      <div class="col-md-8 mx-auto text-center">
+        <h2>Welcome to Our Resource Hub</h2>
+        <p class="lead">We curate and publish high-quality resources to help you learn and grow.</p>
+      </div>
+			<div class="row">
+				<div class="col-md-4 mx-auto text-center">
+					<div class="card" style="border: none;">
+						<div class="image-container">
+              <img src="{% static "media/About-Vector-2.png" %}" class="card-img-top" alt="...">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Development</h5>
+							<p class="card-text">Explore a wide range of resources that cover various aspects of school leadership, professional development, and more. Discover valuable insights, strategies, and best practices to excel in any role.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mx-auto text-center">
+					<div class="card" style="border: none;">
+						<div class="image-container">
+							<img src="{% static "media/About-Vector-1.png" %}" class="card-img-top" alt="...">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Resilience</h5>
+							<p class="card-text">Access a wealth of resources that focus on fostering well-being, resilience, and personal growth. Discover strategies to enhance your own well-being, promote self-care, and develop resilience in the face of challenges.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mx-auto text-center">
+					<div class="card" style="border: none;">
+						<div class="image-container">
+							<img src="{% static "media/About-Vector-3.png" %}" class="card-img-top" alt="...">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Inclusion</h5>
+							<p class="card-text">Discover resources in this category that delve into topics of diversity, equity, and inclusion. Gain insights and practical strategies to promote a more inclusive and equitable environment, foster diversity, and address educational disparities.</p>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</section>
+{% endblock %}

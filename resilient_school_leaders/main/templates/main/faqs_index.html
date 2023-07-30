@@ -1,0 +1,122 @@
+{% extends 'main/base.html' %}
+{% load static %}
+<!-- HEAD CONTENT -->
+{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Resource Page{% endblock %}</title>
+	<link rel="stylesheet" href="{% static 'css/faqs_styles.css' %}">
+{% endblock %}
+<!-- BODY CONTENT -->
+{% block content %}
+<!--===== Hero Section =====-->
+<section class="hero" style="background-image: url({% static 'media/home.png' %});background-color:blue;background-size: cover;background-repeat: no-repeat;">
+	<div class="container">
+		<div class="row align-items-left">
+			<div class="col-md-6">
+				<h1 class="display-4 text-left">What Can We Help You With?</h1>
+				<p class="lead text-left">We are here to help you learn about us and all that we have to offer.
+					Learn and Grow with Resilient School Leaders
+				</p>
+			</div>
+			<div class="col-md-6 mx-auto">
+                <form class="form-inline justify-content-center">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+		</div>
+	</div>
+</section>
+
+<!--===== Email Signup =====-->
+<section class="email-signup" id="email-signup">
+	<h2 class="signup-heading">Get The Latest News and Information</h2>
+	<a href="{% url 'about_index' %}" class="signup-button" style="text-decoration: none;">
+		<p>Learn More</p>
+	</a>
+	<a href="{% url 'contact_index' %}" class="contact-button" style="text-decoration: none;">
+		<p>Contact us</p>
+	</a>
+</section>
+<!-- FREQUENTLY ASKED QUESTIONS ACCORDIION -->
+<section styles="margin-top:0;">
+	<div class="accordion accordion-flush" id="accordionFlushExample"style="margin-top:2rem;">
+		<div class="accordion-item">
+		  <h2 class="accordion-header" id="flush-headingOne">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+			  What is Resilient School Leaders (RSL)?
+			</button>
+		  </h2>
+		  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+			<div class="accordion-body">Resilient School Leaders (RSL) is an open-source site designed to serve as a resource hub for school leaders and professionals. It provides easy access to a wide range of resources from various categories, including professional and leadership development, well-being and resilience, diversity equity and inclusion, team building, and community and networking. The platform offers a user-friendly interface to navigate through these resources effectively.</div>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <h2 class="accordion-header" id="flush-headingTwo">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+				How do I navigate the website to find specific resources?
+			</button>
+		  </h2>
+		  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+			<div class="accordion-body">Resilient School Leaders tried to implement an easy to navigate and user-friendly interface so you can find your resources as easily as possible. Everything is acessible in one click. Use the navigation bar to find available resources, view all of them or filter by category. Up to you!</div>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <h2 class="accordion-header" id="flush-headingThree">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+				Can I contribute resources to Resilient School Leaders?
+			</button>
+		  </h2>
+		  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+			<div class="accordion-body">Yes, you can contribute resources to Resilient School Leaders. If you have valuable content or know of useful resources, you can submit them through the platform's contribution process. The website's administrators will review and curate the submissions to ensure they align with the platform's goals. Please reach out to us with the recommended resource through the <a href="#">Contact Page</a>.</div>
+		  </div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="flush-headingFour">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+				How can I stay updated on the latest additions and news from Resilient School Leaders?
+			  </button>
+			</h2>
+			<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+			  <div class="accordion-body">To stay informed about the latest resources, updates, and news from Resilient School Leaders, you can subscribe to the platform's newsletter. Additionally, follow our official social media channels for regular updates and announcements.</div>
+			</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="flush-headingFive">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+				How can I provide feedback or report issues with the website?
+			  </button>
+			</h2>
+			<div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+			  <div class="accordion-body">Your feedback is valuable to us! To provide feedback or report any issues with the website, you can use the "Contact Us" page or the provided feedback form. Our team will review your message and respond as soon as possible.</div>
+			</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="flush-headingSix">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+				What is the history behind Resilient School Leaders?
+			  </button>
+			</h2>
+			<div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+			  <div class="accordion-body">Resilient School Leaders was conceptualized by a team of educational professionals who recognized the need for a centralized resource hub for school leaders. The idea originated from a desire to empower school leaders with valuable resources and support to enhance their leadership skills and promote resilience within the education community.</div>
+			</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="flush-headingSeven">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+				Is there a blog or news section where I can read about updates and insights?
+			  </button>
+			</h2>
+			<div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+			  <div class="accordion-body">Yes, Resilient School Leaders maintains a blog or news section where you can access informative articles, updates about the platform, educational insights, and thought leadership pieces. The blog is regularly updated to keep users informed and engaged.</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

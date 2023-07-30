@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+<!-- HEAD CONTENT -->
+{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}About Page{% endblock %}</title>
+	<!-- CSS STYLING SHEET -->
+	<link rel="stylesheet" href="{% static "css/about_styles.css" %}">
+{% endblock %}
+<!-- BODY CONTENT -->
+{% block content %}
+	<!-- Hero Section -->
+	<section class="hero-section" style="background-image: url({% static 'media/About-Us.png' %});">
+		<div class="container">
+			<div class="row align-items-left">
+				<div class="col-md-6">
+					<h1 class="display-4 text-left">Coming Soon</h1>
+					<p class="lead text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien bibendum sapien, vel bibendum sapien sapien vel bibendum.</p>
+					<a href="#" class="btn btn-primary">Learn More</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--===== Email Signup =====-->
+    <section class="email-signup">
+        <h2 class="signup-heading">View Our Open-Source Resource Hub</h2>
+        <a href="{% url 'resource_index' %}" class="signup-button">
+            <p>View All</p>
+        </a>
+        <a href="{% url 'contact_index' %}" class="contact-button">
+            <p>Learn More</p>
+        </a>
+    </section>
+{% endblock %}

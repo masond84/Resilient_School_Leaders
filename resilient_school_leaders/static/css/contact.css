@@ -1,0 +1,39 @@
+/* Additional styles to center the form */
+body, html {
+    height: 100%;
+}
+.centered-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 5vh; 
+}
+form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+form .form-group {
+    margin-bottom: 20px; 
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 15px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+}

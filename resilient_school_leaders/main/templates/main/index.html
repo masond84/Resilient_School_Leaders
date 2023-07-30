@@ -1,0 +1,234 @@
+{% extends 'main/base.html' %}
+{% load static %}
+<!-- HEAD CONTENT -->
+{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Resilient School Leaders{% endblock %}</title>
+    <!-- LANDING PAGE STYLING SHEET -->
+    <link rel="stylesheet" href="{% static 'css/landing_styles2.css' %}">
+{% endblock %}
+
+<!-- BODY CONTENT -->
+{% block content %}
+    <!--===== Hero Section =====-->
+    <section class="hero" style="background: linear-gradient(to bottom right, #7a65e4, #023892);position: relative;">
+        <div class="container" style="position:absolute; left: 150px;top:200px; width:50%;">
+          <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-uppercase text-left" style="color:white;font-family:'Montserrat';font-weight:bold;font-size:60px;">Become</h1>
+                <h3 class="text-uppercase font-weight-light text-left" style="color:#18a0fb;font-family:'Montserrat';font-weight:400;font-size:45px;">Resilient</h3>
+                <hr style="color:white;width:80%; height:2px;">
+                <p style="color:white;">Uncover a comprehensive collection of quality resources to support your growth and development. 
+                    Whether you are a school leader, educator, or administrator, our Resource Hub is designed to empower you with the knowledge and tools needed to excel in your role.
+                </p>
+                <a href="#email-signup" class="learnmore">
+                    <div class="primary-default">
+                        <h5>View Resources</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'media/Landing-vector3.png' %}" alt="Hero Image" class="img" style="margin-left:8rem;margin-top:-10rem;width: 725px;height: 600px;">
+              </div>
+          </div>
+        </div>
+    </section>
+    <!--===== Email Signup =====-->
+    <section class="email-signup" id="email-signup">
+        <h2 class="signup-heading">Get The Latest News and Information</h2>
+        <a href="{% url 'about_index' %}" class="signup-button" style="text-decoration: none;">
+            <p>Learn More</p>
+        </a>
+        <a href="{% url 'contact_index' %}" class="contact-button" style="text-decoration: none;">
+            <p>Contact us</p>
+        </a>
+    </section>
+
+    <!--===== Resources Section =====-->
+    <section class="resources" id="resources">
+        <!-- Header Subtitle -->
+        <span>Resources and Information</span>
+        <!-- Header Title -->
+        <h7 class="title">Find What Is Neccessary With <span><a href="#">Open-Source Resources</a></span> Relevant To You</h7>
+        <hr class="divider">
+        <!--*** Resources Grid ***-->
+        <div class="grid">
+            <!-- Card Item -->
+            <div class="grid-item">
+                <img class="card-img" src="{% static 'media/card-1.jpg' %}" alt="leadership-development-image"/>
+                <div class="card-content">
+                    <h1 class="card-header text-center">Leadership Development</h1>
+                    <hr class="divider">
+                    <p class="card-text">
+                        Empower yourself and your team with quality leadership tools
+                    </p>
+                    <a href="{% url 'leadership_development' %}" style="text-decoration: none;text-align: center;margin-top: 1rem;padding:.5rem;">
+                        <div class="card-btn">
+                            View More <span>&rarr;</span>  
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Card Item -->
+            <div class="grid-item">
+                <img class="card-img" src="{% static 'media/card-2.jpg' %}" alt="professional-development-image"/>
+                <div class="card-content">
+                    <h1 class="card-header text-center">Professional Development</h1>
+                    <hr class="divider">
+                    <p class="card-text">
+                        Unlock your potential with the power of professionalism
+                    </p>
+                    <a href="{% url 'professional_development' %}" style="text-decoration: none;text-align: center;margin-top: 1rem;padding:.5rem;">
+                        <div class="card-btn">
+                            View More <span>&rarr;</span>  
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Card Item -->
+            <div class="grid-item">
+                <img class="card-img" src="{% static 'media/card-7.png' %}" alt="image-box-2"/>
+                <div class="card-content">
+                    <h1 class="card-header text-center">Wellbeing & Resilience</h1>
+                    <hr class="divider">
+                    <p class="card-text">
+                        Effective strategies for managing stress and overcoming adversity 
+                    </p>
+                    <a href="{% url 'wellbeing_resilience' %}" style="text-decoration: none;text-align: center;margin-top: 1rem;padding:.5rem;">
+                        <div class="card-btn">
+                            View More <span>&rarr;</span>  
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Card Item -->
+            <div class="grid-item">
+                <img class="card-img" src="{% static 'media/card-6.jpg' %}" alt="image-box-2"/>
+                <div class="card-content">
+                    <h1 class="card-header text-center">Team Building & Collaboration</h1>
+                    <hr class="divider">
+                    <p class="card-text">
+                        Learn to foster a culture of collaboration and teamwork to achieve collective goals
+                    </p>
+                    <a href="{% url 'team_building' %}" style="text-decoration: none;text-align: center;margin-top: 1rem;padding:.5rem;">
+                        <div class="card-btn">
+                            View More <span>&rarr;</span>  
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img class="card-img" src="{% static 'media/card-5.jpg' %}" alt="image-box-2"/>
+                <div class="card-content">
+                    <h1 class="card-header text-center">Community & Networking</h1>
+                    <hr class="divider">
+                    <p class="card-text">
+                        Build connections and learn new strategies for effective engagements
+                    </p>
+                    <a href="{% url 'community_networking' %}" style="text-decoration: none;text-align: center;margin-top: 1rem;padding:.5rem;">
+                        <div class="card-btn">
+                            View More <span>&rarr;</span>  
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img class="card-img" src="{% static 'media/card-7.jpg' %}" alt="image-box-2"/>
+                <div class="card-content">
+                    <h1 class="card-header text-center">Diversity, Equity, Inclusion</h1>
+                    <hr class="divider">
+                    <p class="card-text">
+                        Strategies for fostering inclusivity in all of the 
+                        places that matter
+                    </p>
+                    <a href="{% url 'diversity_inclusion' %}" style="text-decoration: none;text-align: center;margin-top: 1rem;padding:.5rem;">
+                        <div class="card-btn">
+                            View More <span>&rarr;</span>  
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="view-all">
+            <a href="{% url 'resource_index' %}" class="btn my_btn">View All Resources</a>
+        </div>
+    </section>
+
+    <!-- Recent Articles Section -->
+    <section class="article-section">
+        <!-- Articles Header -->
+        <span>Documents and Articles</span>
+        <h7 class="title">Discover What's Trending With Recent <span><a href="#">Documents and Articles</a></span></h7>
+        <hr class="divider">
+        <!-- Article Grid -->
+        <!-- A div with container id to hold the card -->
+        <div id="container">
+            <!-- A div with card class for the card  -->
+            <div class="card">
+                <img src="{% static 'media/recent_documents.jpg' %}" class="card-image">
+                <!-- A div with card__details class to hold the details in the card  -->
+                <div class="card_content">
+                    <!-- A div with name class for the name of the card -->
+                    <h2>Recent Documents</h2>
+                    <!--<button class="card_button" href="{% url 'coming_soon' %}">See More</button>-->
+                </div>
+            </div>
+            <!-- A div with card class for the card  -->
+            <div class="card">
+                <img src="{% static 'media/trending_documents.jpg' %}" class="card-image">
+                <!-- A div with card__details class to hold the details in the card  -->
+                <div class="card_content">
+                    <!-- A div with name class for the name of the card -->
+                    <h2>Trending Documents</h2>
+                    <!--<button class="card_button" href="{% url 'coming_soon' %}">See More</button>-->
+                </div>
+            </div>
+            <!-- A div with card class for the card  -->
+            <div class="card">
+                <img src="{% static 'media/popular_documents.jpg' %}" class="card-image">
+                <!-- A div with card__details class to hold the details in the card  -->
+                <div class="card_content">
+                    <!-- A div with name class for the name of the card -->
+                    <h2>Popular Documents</h2>
+                    <!--<button class="card_button" href="{% url 'coming_soon' %}">See More</button>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--===== About Section =====-->
+    <section class="content-section-2">
+        <div class="content-heading">
+            <div>About Us</div>
+            <h2>And Our Services</h2>
+        </div>
+        <div class="content-grid">
+            <div class="content-node">
+                <h4 class="node-head">Student Resource Center</h4>
+                <p class="node-text">
+                    Providing student leaders with the information and resources they need to succeed. 
+                    Whether a team captain, or simply someone who wants to make a positive impact, 
+                    our goal is to empower you with the knowledge and skills you need to lead effectively.
+                </p>
+            </div>
+            <div class="content-node">
+                <h4 class="node-head">Leadership Resources</h4>
+                <p class="node-text">
+                    We offer a wide range of leadership resources, including articles, guides, and templates, to help you develop 
+                    your leadership skills and achieve your goals. Our resources cover topics such as communication, team building, 
+                    time management, and more. 
+                </p>
+            </div>
+            <div class="content-node">
+                <h4 class="node-head">Community Support</h4>
+                <p class="node-text">
+                    We believe that building a supportive community is essential to effective leadership. That's why we offer a 
+                    forum where you can connect with other student leaders, share your experiences and ideas, and ask for advice. 
+                    Our community is a safe and inclusive space where everyone is welcome. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

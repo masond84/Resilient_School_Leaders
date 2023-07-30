@@ -1,0 +1,32 @@
+{% extends 'contact/base.html' %}
+{% load static %}
+
+<!-- HEAD CONTENT -->
+{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Resilient School Leaders{% endblock %}</title>
+    <!-- LANDING PAGE STYLING SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+
+<!-- BODY CONTENT -->
+{% block content %}
+<div class="centered-form" style="margin-top:5rem;">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="text-center">Contact Us</h1>
+        </div>
+        <div class="card-body">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
